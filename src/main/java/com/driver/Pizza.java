@@ -8,8 +8,8 @@ public class Pizza {
 private int extracheese;
 private int extratopping;
 private int bag;
-private boolean ischeeseadded;
-private boolean istoppingadded;
+boolean ischeeseadded;
+ boolean istoppingadded;
  boolean istakeaway;
  boolean isbillgenerated;
 
@@ -18,7 +18,7 @@ private boolean istoppingadded;
         // your code goes here
         this.extracheese=80;
         this.bag=20;
-        if(isVeg==true){
+        if(isVeg){
             this.price=300;
             this.extratopping=70;
         }else{
@@ -37,7 +37,7 @@ private boolean istoppingadded;
     }
 
     public void addExtraCheese(){
-        if(ischeeseadded==false){
+        if(!ischeeseadded){
             this.price+=this.extracheese;
             ischeeseadded=true;
         }
@@ -46,7 +46,7 @@ private boolean istoppingadded;
 
     public void addExtraToppings(){
         // your code goes here
-        if(istoppingadded==false){
+        if(!istoppingadded){
             this.price+=this.extratopping;
             istoppingadded=true;
         }
@@ -54,7 +54,7 @@ private boolean istoppingadded;
 
     public void addTakeaway(){
         // your code goes here
-        if(istakeaway==false){
+        if(!istakeaway){
             this.price=this.price+this.bag;
             istakeaway=true;
         }
@@ -62,19 +62,20 @@ private boolean istoppingadded;
 
     public String getBill(){
         // your code goes here
-        if(isbillgenerated==false){
-            if(ischeeseadded==true){
+        if(!isbillgenerated){
+            if(ischeeseadded){
             this.bill+="Extra Cheese Added: "+this.extracheese+"\n";
             }
-            if(istoppingadded==true){
+            if(istoppingadded){
                 this.bill = this.bill+ "Extra Toppings Added: "+this.extratopping+"\n";
             }
-            if(istakeaway==true){
+            if(istakeaway){
                 bill = bill + "Paperbag Added: "+this.bag+"\n";
             }
+            this.bill = this.bill + "Total Price: "+this.price+"\n";
             isbillgenerated=true;
         }
-        this.bill = this.bill + "Total Price: "+this.price+"\n";
+
         return this.bill;
     }
 }
