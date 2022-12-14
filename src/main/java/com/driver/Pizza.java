@@ -28,6 +28,7 @@ private boolean istoppingadded;
         this.ischeeseadded=false;
         this.istoppingadded=false;
         this.istakeaway=false;
+        this.bill = "Base Price Of The Pizza: "+this.price+"\n";
 
     }
 
