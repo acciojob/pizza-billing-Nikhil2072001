@@ -20,7 +20,7 @@ private boolean istoppingadded;
         this.bag=20;
         if(isVeg==true){
             this.price=300;
-            this.extratopping=80;
+            this.extratopping=70;
         }else{
             this.price=400;
             this.extratopping=120;
